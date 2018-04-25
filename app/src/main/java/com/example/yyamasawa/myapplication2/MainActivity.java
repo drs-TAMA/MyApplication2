@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,9 +15,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    Button sendButton = findViewById(R.id.sendButton);
+    sendButton.setOnClickListener(new View.OnClickListener()){
+
     public void onClick(View v) {
         //インテントの作成
-        Intent intent = new Intent(this, SubActivity.class);
+        Intent intent = new Intent(getApplication(), SubActivity.class);
 
         //データをセット
         EditText editText = (EditText)this.findViewById(R.id.editText);

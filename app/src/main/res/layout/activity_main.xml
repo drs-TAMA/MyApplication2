@@ -26,7 +26,7 @@
         android:layout_centerHorizontal="true"/>
     
     <Button
-        android:id="@+id/send_button"
+        android:id="@+id/sendButton"
         android:text="@string/move"
         android:textSize="30sp"
         android:layout_width="wrap_content"
