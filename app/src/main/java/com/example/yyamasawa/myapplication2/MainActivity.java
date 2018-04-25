@@ -13,20 +13,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    Button sendButton = findViewById(R.id.sendButton);
-    sendButton.setOnClickListener(new View.OnClickListener()){
+        final EditText editText = findViewById(R.id.editText);
 
-    public void onClick(View v) {
-        //インテントの作成
-        Intent intent = new Intent(getApplication(), SubActivity.class);
+        Button sendButton = findViewById(R.id.sendButton);
+        sendButton.setOnClickListener(new View.OnClickListener() {
 
-        //データをセット
-        EditText editText = (EditText)this.findViewById(R.id.editText);
-        intent.putExtra("sendText",editText.getText().toString());
+            @Override
+            public void onClick(View view) {
+                //インテントの作成
+                Intent intent = new Intent(getApplication(), SubActivity.class);
 
-        //遷移先の画面を起動
-        startActivity(intent);
+                //データをセット
+                intent.putExtra("sendText", editText.getText().toString());
+
+                //遷移先の画面を起動
+                startActivity(intent);
+            }
+        });
     }
 }
